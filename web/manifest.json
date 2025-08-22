@@ -1,0 +1,10 @@
+{
+  "name": "HandArt Market",
+  "short_name": "HandArt",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#10B981",
+  "description": "Local crafts marketplace with offline support.",
+  "icons": []
+}
