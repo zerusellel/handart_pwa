@@ -11,12 +11,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Flutter
+      - name: Setup Flutter (stable pinned)
         uses: subosito/flutter-action@v2
         with:
           channel: stable
+          flutter-version: "3.22.2"
 
-      - name: Flutter Pub Get
+      - name: Doctor
+        run: |
+          flutter --version
+          flutter doctor -v
+          flutter config --enable-web
+
+      - name: Pub Get
         run: flutter pub get
 
       - name: Build Web Release
@@ -28,3 +35,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: build/web
           publish_branch: gh-pages
+
